@@ -7,7 +7,7 @@ import { exec as execute } from 'child_process';
 
 import glob from 'glob';
 
-import furler from '../../../furled/src';
+import furled from 'furled';
 
 import { Logs } from '../utils';
 import {
@@ -105,7 +105,7 @@ export const bundle = async (pathToEntry: string) => {
 
   const bundlePromise = await new Promise((resolve) => {
     resolve(
-      furler(pathToEntry, {
+      furled(pathToEntry, {
         cache: false,
         quiet: true,
       })
