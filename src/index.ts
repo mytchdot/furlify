@@ -16,9 +16,7 @@ import {
 import { FULRIFY_DIR } from './lib/constants';
 
 const main = async (args: string[]) => {
-  const parsedArgs = args.filter((item) => item !== 'SELF');
-
-  for (const pkg of parsedArgs) {
+  for (const pkg of args) {
     if (!pkg) throw new Error('Missing parameter: <package-name>');
 
     const pathToNamedDir = path.join(FULRIFY_DIR, pkg);
@@ -28,7 +26,7 @@ const main = async (args: string[]) => {
     try {
       setupDirs(pkg);
 
-      const tarballUrl = await fetchTarballUrl(pkg, parsedArgs);
+      const tarballUrl = await fetchTarballUrl(pkg, args);
 
       await downloadTar(pkg, pathToNamedDir, tarballUrl);
 
