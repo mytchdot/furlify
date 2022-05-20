@@ -1,0 +1,52 @@
+{
+  "name": "furlify",
+  "version": "0.1.0",
+  "description": "furl n go!",
+  "license": "MIT",
+  "repository": "mytchmason/furlify",
+  "main": "./dist/index.js",
+  "exports": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "furlify": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node ./src/index.ts",
+    "prepublishOnly": "build",
+    "test": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' NODE_ENV=test mocha --require ts-node/register --extensions ts,tsx  --timeout 300000 --exit --recursive src/__tests__/**.test.ts"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "keywords": [
+    "furl"
+  ],
+  "devDependencies": {
+    "@types/chai": "^4.3.1",
+    "@types/glob": "^7.2.0",
+    "@types/memory-fs": "^0.3.3",
+    "@types/mocha": "^9.1.1",
+    "@types/node": "^16.11.10",
+    "@types/resolve": "^1.20.2",
+    "@types/tar": "^6.1.1",
+    "chai": "^4.3.6",
+    "mocha": "^10.0.0",
+    "ts-node": "^10.7.0"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "glob": "^8.0.3",
+    "license-webpack-plugin": "^4.0.2",
+    "memory-fs": "^0.5.0",
+    "resolve": "^1.22.0",
+    "shebang-loader": "^0.0.1",
+    "tar": "^6.1.11",
+    "terser": "^5.13.1",
+    "ts-loader": "^9.3.0",
+    "tsconfig-paths": "^4.0.0",
+    "tsconfig-paths-webpack-plugin": "^3.5.2",
+    "typescript": "^4.6.4",
+    "webpack": "^5.72.1"
+  }
+}
