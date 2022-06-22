@@ -2,7 +2,7 @@
   "name": "furlify",
   "version": "0.1.2",
   "description": "furl n go!",
-  "license": "MIT",
+  "license": "GNU",
   "repository": "mytchmason/furlify",
   "main": "./dist/index.js",
   "exports": "./dist/index.js",
